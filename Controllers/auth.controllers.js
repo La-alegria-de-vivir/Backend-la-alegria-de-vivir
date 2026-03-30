@@ -45,7 +45,6 @@ export const signin = async (req, res, next)=> {
         }
         const token = jwt.sign
            ( {id: validUser._id, isAdmin:validUser.isAdmin} , privateKey, { algorithm: 'RS256'});
-            console.log(publicKey);
             const {password: pass, ...rest} = validUser._doc;
            res
            .status(200)
